@@ -1,63 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using CalculateExpressions.NewExpression;
+using CalculateExpressions.BusinessLogic.Expressions;
+using CalculateExpressions.BusinessLogic.Recognitions;
 
-namespace CalculateExpressions.Domain
+namespace CalculateExpressions.Console
 {
-    public interface IExpression
+    class Program
     {
-        double Result();
-    }
-
-    public interface IOperation
-    {
-        IExpression Calculate();
-    }
-
-    public interface IRecognizer
-    {
-        IOperation Recognize(String expression);
-        IEnumerable<IOperationRecognition> Recognitions { get; }
-    }
-
-    public interface IOperationRecognition
-    {
-        IOperation Recognize(string expression, IRecognizer recognizer);
-    }
-
-    public abstract class UnaryOperation : IOperation
-    {
-        public IExpression Parameter { get; protected set; }
-
-        protected UnaryOperation(IExpression param)
+        static void Main(string[] args)
         {
-            Parameter = param;
+            var stringrecognizer = VariedExpression.Change (System.Console.ReadLine());
+            foreach (var recognation in stringrecognizer)
+            {
+                var recognizer = new Recognizer();
+                var exp = new CalculableExpression(recognizer.Recognize(recognation));
+                System.Console.WriteLine(exp.Result());
+            }
+            System.Console.ReadKey();
         }
-
-        #region IOperation Members
-
-        public abstract IExpression Calculate();
-
-        #endregion
     }
 
-    public abstract class BinaryOperation : IOperation
-    {
-        public IExpression Parameter1 { get; protected set; }
-
-        public IExpression Parameter2 { get; protected set; }
-
-        protected BinaryOperation(IExpression param1, IExpression param2)
-        {
-            Parameter1 = param1;
-            Parameter2 = param2;
-        }
-
-        #region IOperation Members
-
-        public abstract IExpression Calculate();
-
-        #endregion
-    }
 }
-
-

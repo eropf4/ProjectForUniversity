@@ -4,6 +4,8 @@ namespace CalculateExpressions.BusinessLogic.Expressions
 {
     public class CalculableExpression : IExpression
     {
+        protected IOperation Operation { get; set; }
+
         public CalculableExpression(IOperation operation)
         {
             Operation = operation;
@@ -14,7 +16,6 @@ namespace CalculateExpressions.BusinessLogic.Expressions
             return Operation.Calculate().Result();
         }
 
-        protected IOperation Operation { get; set; }
     }
 
     public class SimpleExpression : IExpression
