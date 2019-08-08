@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp4
+﻿namespace GraphInterface
 {
     partial class Form1
     {
