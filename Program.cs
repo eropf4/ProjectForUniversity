@@ -22,19 +22,21 @@ namespace CalculateExpressions.Console
             {
                 var recognizer = new Recognizer();
                 var exp = new CalculableExpression(recognizer.Recognize(recognation));
+                series.Points.Add(new DataPoint(start,exp.Result() ));
                 start += 1;
-                series.Points.Add(new DataPoint(exp.Result(), start));
                 System.Console.WriteLine(series.Points.ToString());
             }
 
             var chart = new Chart();
             chart.ChartAreas.Add(new ChartArea());
+
             series.ChartType = SeriesChartType.FastLine;
             series.Color = Color.Red;
             series.MarkerBorderWidth = 3;
 
             chart.Series.Add(series);
             chart.Dock = DockStyle.Fill;
+
             var form = new Form1();
             form.Controls.Add(chart);
             Application.Run(form);
