@@ -7,11 +7,11 @@ namespace CalculateExpressions.NewExpression
 {
     public class VariedExpression
     {
-        public static List<String> Change (String expression)
+        public static List<String> Change (String expression, int start, int finish)
         { 
             var listofexpression = new List<String>();
 
-            for (var i = 0; i <= 20; i++)
+            for (var i = start; i <= finish; i++)
             {
                 var strbldrexpression = new StringBuilder(expression);
                 var number = i.ToString();

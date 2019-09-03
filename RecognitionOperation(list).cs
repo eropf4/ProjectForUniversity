@@ -6,7 +6,6 @@ namespace CalculateExpressions.BusinessLogic.Recognitions
 {
     public class Recognizer : IRecognizer
     {
-        public double rak;
         public Recognizer()
         {
             Recognitions = new List<IOperationRecognition>

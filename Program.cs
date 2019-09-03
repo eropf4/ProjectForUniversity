@@ -1,22 +1,17 @@
-﻿using CalculateExpressions.NewExpression;
-using CalculateExpressions.BusinessLogic.Expressions;
-using CalculateExpressions.BusinessLogic.Recognitions;
+﻿using System;
+
+using GraphInterface;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace CalculateExpressions.Console
 {
     class Program
     {
-        static void Main(string[] args)
+
+        static void Main()
         {
-            var stringrecognizer = VariedExpression.Change (System.Console.ReadLine());
-            foreach (var recognation in stringrecognizer)
-            {
-                var recognizer = new Recognizer();
-                var exp = new CalculableExpression(recognizer.Recognize(recognation));
-                System.Console.WriteLine(exp.Result());
-            }
-            System.Console.ReadKey();
+            Application.Run(new Form1());
         }
     }
-
 }
