@@ -36,6 +36,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.ExpressionBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.StepBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // StartBox
@@ -44,6 +46,7 @@
             this.StartBox.Name = "StartBox";
             this.StartBox.Size = new System.Drawing.Size(162, 20);
             this.StartBox.TabIndex = 0;
+            this.StartBox.Text = "-20";
             // 
             // label1
             // 
@@ -71,13 +74,14 @@
             this.FinishBox.Name = "FinishBox";
             this.FinishBox.Size = new System.Drawing.Size(162, 20);
             this.FinishBox.TabIndex = 3;
+            this.FinishBox.Text = "20";
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(367, 21);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(493, 72);
+            this.button1.Size = new System.Drawing.Size(493, 100);
             this.button1.TabIndex = 4;
             this.button1.Text = "Построить график";
             this.button1.UseVisualStyleBackColor = true;
@@ -87,24 +91,44 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(12, 67);
+            this.label3.Location = new System.Drawing.Point(12, 95);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 26);
             this.label3.TabIndex = 5;
             this.label3.Text = "Функция";
             // 
-            // ExpressioBox
+            // ExpressionBox
             // 
-            this.ExpressionBox.Location = new System.Drawing.Point(199, 73);
+            this.ExpressionBox.Location = new System.Drawing.Point(199, 99);
             this.ExpressionBox.Name = "ExpressionBox";
             this.ExpressionBox.Size = new System.Drawing.Size(162, 20);
             this.ExpressionBox.TabIndex = 6;
+            this.ExpressionBox.Text = "cosx";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(12, 69);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(143, 26);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Шаг графика";
+            // 
+            // StepBox
+            // 
+            this.StepBox.Location = new System.Drawing.Point(199, 73);
+            this.StepBox.Name = "StepBox";
+            this.StepBox.Size = new System.Drawing.Size(162, 20);
+            this.StepBox.TabIndex = 8;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(875, 572);
+            this.Controls.Add(this.StepBox);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.ExpressionBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
@@ -130,5 +154,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox ExpressionBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox StepBox;
     }
 }

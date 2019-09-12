@@ -24,7 +24,7 @@ namespace CalculateExpressions.BusinessLogic.Expressions
 
         public SimpleExpression(double number)
         {
-            Number = number;//ssss
+            Number = number;
         }
 
         public double Result()
